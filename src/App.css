@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+html, body{
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
   min-height: 100vh;
+  background-image: linear-gradient(to right top, #fce9f1, #f5edfa, #eef2fd, #eaf5fc, #ecf8f9);
+
+}
+
+.wrapper{
+  padding: 1rem 0;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+
+
+}
+
+header{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+header > a{
+  padding: 12px 30px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mainIntro{
+  width: 80%;
+  margin: auto;
+}
+
+.mainIntro > h1{
+  font-size: 48px;
+}
+
+.mainIntro > h1 > span {
+  display: block;
+  background: -webkit-linear-gradient( #f29727, #f48629, #f5742e, #f46135, #f24c3d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainIntro > p{
+  margin: auto;
+  width: 60%;
+  color: #272727a5;
+  margin-block: 1rem 3rem;
+}
+
+form > input{
+  width: 70%;
+  padding: 15px 25px;
+  border-radius: 999px;
+  margin-block: 4rem;
+  border: none;
+  font-size: 18px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+.resultContainer{
+  width: 70%;
+  margin: auto;
+  text-align: left;
+  padding: 12px 22px;
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.resultContainer > p{
+  padding-top: 12px;
+}
+
+footer{
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font-weight: 600;
+}
+
+
+/* Loading Start */
+
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+
+/* Loading Ends */
+
+@media (max-width: 768px) {
+  header a{
+    display: none;
+    
+  } 
+
+  .wrapper{
+    width: 100%;
+    position: relative;
+  }
+  
+  .mainIntro > h1{
+    font-size: 25px;
+  }
+
+  .mainIntro > p{
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  form > input{
+    margin-block: 1rem 2rem;
+    width: 80%;
+    font-size: 16px;
+    box-shadow: 5px 5px 28px rgba(128, 128, 128, 0.673);
+  }
+
+  .resultContainer{
+    margin-bottom: 2rem;
+  }
+
+  footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
